@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AI Food Recipe Generator</title><link rel="stylesheet" href="/static/style.css"><script src="/static/app.js" defer></script></head>
+<body>
+<header><a href="/" class="brand"><span class="mark">↟</span> AI Food Recipe Generator</a><span id="mode" class="badge">Checking kitchen…</span></header>
+<main>
+  <section class="intro"><p class="eyebrow">GOOD FOOD STARTS WITH WHAT YOU HAVE</p><h1>A few ingredients.<br>A little inspiration.</h1><p class="lede">Turn your pantry staples into something worth sitting down for.</p></section>
+  <div class="workspace">
+    <section class="panel"><p class="eyebrow">01 / YOUR PANTRY</p><h2>What's in the kitchen?</h2>
+      <form id="recipe-form">
+        <label for="ingredients">Ingredients</label><textarea id="ingredients" rows="4" required maxlength="1500" aria-describedby="ingredient-hint" placeholder="chickpeas, tomato, onion"></textarea><small id="ingredient-hint">Separate ingredients with commas. Up to 25 ingredients.</small>
+        <div class="examples"><span>Try:</span><button type="button" data-example="chickpeas, tomato, onion" data-cuisine="Indian">Chickpea curry</button><button type="button" data-example="tofu, broccoli, ginger" data-cuisine="East Asian">Tofu stir-fry</button></div>
+        <div class="fields"><div><label for="cuisine">Cuisine</label><select id="cuisine"><option>Italian</option><option>Indian</option><option>Mexican</option><option>Mediterranean</option><option>East Asian</option></select></div><div><label for="servings">Servings</label><input id="servings" type="number" min="1" max="8" value="2" required></div></div>
+        <button class="submit" id="generate" type="submit">Find my next meal <span>→</span></button>
+        <p id="status" role="status" aria-live="polite"></p>
+      </form>
+      <p class="fineprint" id="mode-note">Recipes are suggestions. Check ingredients and cooking instructions before use.</p>
+    </section>
+    <section id="result" class="panel result" aria-live="polite"><div class="empty"><div class="plate">✳</div><p class="eyebrow">02 / SOMETHING DELICIOUS</p><h2>Your next meal starts here.</h2><p>Add your ingredients and pick a cuisine.<br>We'll take it from there.</p><div class="rule"></div><small>Less wondering. More cooking.</small></div></section>
+  </div>
+  <footer>Made for everyday cooking.<a href="/docs">Explore the API ↗</a></footer>
+</main></body></html>
