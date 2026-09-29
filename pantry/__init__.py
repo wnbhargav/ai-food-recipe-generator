@@ -1,0 +1,1 @@
+"""Pantry Table recipe application."""
