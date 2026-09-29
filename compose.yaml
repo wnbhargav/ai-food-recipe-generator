@@ -1,0 +1,13 @@
+services:
+  app:
+    build: .
+    ports:
+      - "127.0.0.1:8000:8000"
+    environment:
+      RECIPE_MODE: ${RECIPE_MODE:-demo}
+      OLLAMA_URL: http://host.docker.internal:11434
+      CHAT_MODEL: ${CHAT_MODEL:-qwen2.5:3b}
+      EMBEDDING_MODEL: ${EMBEDDING_MODEL:-nomic-embed-text}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped
